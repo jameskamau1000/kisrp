@@ -1,0 +1,246 @@
+// KISRP theme — aligned with programme logo (navy, green, blue accents)
+$primary: #1e3a5f;
+$secondary: #2d7d6e;
+$success: #2d7d6e;
+$info: #2b6cb0;
+$body-color: #2d3748;
+$headings-color: #1a202c;
+
+@import 'bootstrap/scss/bootstrap';
+
+:root {
+    --kisrp-navy: #1e3a5f;
+    --kisrp-green: #2d7d6e;
+    --kisrp-blue: #2b6cb0;
+    // Navbar: neutral charcoal (contrasts with primary blue hero)
+    --kisrp-nav-bg: #404040;
+    --kisrp-nav-border: rgba(0, 0, 0, 0.2);
+    --kisrp-funding-accent: #c41e3a;
+    --kisrp-funding-kicker: #7f1d1d;
+}
+
+.navbar-kisrp {
+    background-color: var(--kisrp-nav-bg) !important;
+    border-bottom: 1px solid var(--kisrp-nav-border);
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.navbar-brand-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.partner-logo {
+    max-height: 72px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-partner-logo {
+    max-height: 64px;
+    width: auto;
+    object-fit: contain;
+}
+
+.hero-min-h {
+    min-height: 320px;
+}
+
+.hero-carousel {
+    position: relative;
+}
+
+// Wide horizontal rectangle (not a tall/square crop); keeps hero section compact.
+.hero-carousel .carousel-inner {
+    border-radius: var(--bs-border-radius-lg);
+}
+
+.hero-carousel__img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (min-width: 576px) {
+    .hero-carousel__img {
+        height: 240px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-carousel__img {
+        height: 260px;
+    }
+}
+
+// Pilot / full-page galleries: 16×9 frame, max width — avoids a full-width “letterbox” strip
+.hero-carousel--featured {
+    max-width: min(100%, 56rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-carousel--featured .hero-carousel__img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-carousel__caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 1rem 0.75rem;
+    background: linear-gradient(transparent, rgb(0 0 0 / 70%));
+    color: #fff;
+}
+
+.hero-carousel__indicators {
+    margin-bottom: 0.35rem;
+
+    [data-bs-target] {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.45;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+
+.hero-carousel__control {
+    width: 12%;
+    opacity: 0.85;
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: drop-shadow(0 0 2px rgb(0 0 0 / 80%));
+    }
+}
+
+.pilot-card-thumb {
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pilot-home-map-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 11rem;
+    max-height: 14rem;
+}
+
+.pilot-home-map {
+    width: 100%;
+    height: 100%;
+    max-height: 14rem;
+    object-fit: contain;
+    object-position: center;
+}
+
+.county-hero-placeholder {
+    min-height: 220px;
+    background: linear-gradient(135deg, #e8eef4 0%, #dce8e4 100%);
+    border-radius: var(--bs-border-radius-lg);
+}
+
+.phase-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background: var(--bs-primary);
+    color: #fff;
+}
+
+// Home “Phased approach” — vertical timeline (avoids list-group-numbered layout bugs)
+.phase-timeline__track {
+    position: relative;
+    width: 2.75rem;
+}
+
+.phase-timeline__badge {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: var(--bs-primary);
+    color: #fff;
+    box-shadow: 0 0 0 4px var(--bs-light);
+}
+
+.phase-timeline__step:not(:last-child) .phase-timeline__track::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 2.5rem;
+    bottom: -0.25rem;
+    width: 2px;
+    transform: translateX(-50%);
+    background: rgba($primary, 0.22);
+}
+
+.phase-timeline__content {
+    padding-top: 0.15rem;
+}
+
+.focus-area-card__img {
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gis-map-img {
+    max-height: min(90vh, 56rem);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.gis-map-explainers {
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+}
+
+.gis-site-section:last-of-type {
+    border-bottom: none !important;
+}
+
+// Partners page — programme funding callout (accent bar + maroon kicker)
+.kisrp-partners-funding {
+    border-left: 4px solid var(--kisrp-funding-accent);
+}
+
+.kisrp-partners-funding__kicker {
+    color: var(--kisrp-funding-kicker);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
